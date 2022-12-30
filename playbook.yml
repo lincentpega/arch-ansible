@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  roles:
+    - role: alacritty
+    - role: gnupg
+    - role: browsers
+      tags: ['firefox']
+    - role: dotfiles
+
