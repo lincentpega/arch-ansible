@@ -1,0 +1,37 @@
+---
+- name: Install neovim
+  become: yes
+  pacman:
+    name: neovim
+    state: present
+
+- name: Ensure .config/nvim/{autoload,bundle} directory exists
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: no
+    mode: 0750
+  loop:
+    - "{{ vim.dir }}"
+    - "{{ vim.dir }}/autoload"
+    - "{{ vim.dir }}/bundle"
+
+- name: Ensure Pathogen is in place
+  get_url:
+    dest: "{{ vim.dir }}/autoload/pathogen.vim"
+    url: https://tpo.pe/pathogen.vim
+
+- name: Deploy plugins
+  git:
+    dest: "{{ vim.dir }}/bundle/{{ item.name }}"
+    repo: "{{ item.url }}"
+    clone: yes
+    update: yes
+    recursive: no
+  loop:
+  - name: nerd-tree
+    url: https://github.com/scrooloose/nerdtree
+  - name: gruvbox
+    url: https://github.com/morhetz/gruvbox
+  - name: vim-fugitive
+    url: https://github.com/tpope/vim-fugitive

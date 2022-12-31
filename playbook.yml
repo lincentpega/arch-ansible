@@ -6,4 +6,7 @@
     - role: browsers
       tags: ['firefox']
     - role: dotfiles
-
+    - role: nvim
+      vars:
+        vim:
+          dir: "/home/{{ user.name }}/.config/nvim"
