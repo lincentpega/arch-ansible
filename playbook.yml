@@ -10,3 +10,4 @@
       vars:
         vim:
           dir: "/home/{{ user.name }}/.config/nvim"
+    - role: bluetooth
