@@ -3,7 +3,6 @@
   community.general.pacman:
     name:
       - cockpit-machines
-      - cockpit-podman
     state: present
   become: true
 

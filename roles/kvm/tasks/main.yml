@@ -1,0 +1,29 @@
+---
+
+- name: Install libvirt
+  community.general.pacman:
+    name:
+      - libvirt
+      - dnsmasq
+      - iptables-nft
+      - qemu-base
+    force: true
+  become: true
+
+- name: Add user to libvirt group
+  ansible.builtin.user:
+    name: "{{ user.name }}"
+    groups: libvirt
+    append: true
+  become: true
+
+- name: Enable libvirtd.service, virtlogd.service
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+  become: true
+  loop:
+    - libvirtd.service
+    - virtlogd.service
+...

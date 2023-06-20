@@ -1,9 +1,8 @@
 ---
-- name: Install polkit
+- name: Install telegram-desktop
   community.general.pacman:
     name:
-      - polkit
-      - polkit-gnome
+      - telegram-desktop
     state: present
   become: true
 ...

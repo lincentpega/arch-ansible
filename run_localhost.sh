@@ -1,1 +1,1 @@
-ansible-playbook -i inventory.yml --ask-vault-pass playbook.yml
+ansible-playbook -i inventory.yml -D --ask-vault-pass playbook.yml

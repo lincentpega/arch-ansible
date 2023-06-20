@@ -9,7 +9,7 @@
   ansible.builtin.git:
     repo: "{{ dotfiles.url }}"
     dest: /home/{{ user.name }}/{{ dotfiles.destination }}
-    update: no
+    update: false
   become: true
   become_user: "{{ user.name }}"
 
