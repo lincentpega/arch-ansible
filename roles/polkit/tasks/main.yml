@@ -1,9 +1,10 @@
 ---
-- name: Install Firefox
+- name: Install polkit
   community.general.pacman:
-    name: firefox
+    name:
+      - polkit
+      - polkit-gnome
     state: present
   become: true
-  tags:
-    - firefox
 ...
+

@@ -1,0 +1,22 @@
+---
+- name: Install aptitude
+  ansible.builtin.apt:
+    name: aptitude
+    state: present
+    update_cache: true
+  become: true
+
+- name: Install required system packages
+  ansible.builtin.apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+    state: present
+    update_cache: true
+    become: true
+...

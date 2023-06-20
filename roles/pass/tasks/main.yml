@@ -1,9 +1,7 @@
 ---
-- name: Install Firefox
+- name: Install pass
   community.general.pacman:
-    name: firefox
+    name: pass
     state: present
   become: true
-  tags:
-    - firefox
 ...

@@ -1,0 +1,34 @@
+---
+- name: Install font with emoji
+  community.general.pacman:
+    name: noto-fonts-emoji
+    state: present
+  become: true
+
+- name: Install nerd hack font
+  community.general.pacman:
+    name: ttf-hack-nerd
+    state: present
+  become: true
+
+- name: Install hack font
+  community.general.pacman:
+    name: ttf-hack
+    state: present
+  become: true
+
+- name: Create fontconfig directory
+  ansible.builtin.file:
+    path: "/home/{{ user.name }}/.config/fontconfig"
+    state: directory
+    mode: "755"
+  become: true
+  become_user: "{{ user.name }}"
+
+- name: Copy emoji config file
+  ansible.builtin.copy:
+    src: fonts.conf
+    dest: "/home/{{ user.name }}/.config/fontconfig/fonts.conf"
+    mode: "755"
+  become: true
+  become_user: "{{ user.name }}"

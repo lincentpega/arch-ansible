@@ -1,0 +1,19 @@
+---
+- name: Install git
+  community.general.pacman:
+    name: git
+    state: present
+  become: true
+
+- name: Install neovim
+  community.general.pacman:
+    name: neovim
+    state: present
+  become: true
+
+- name: Install man-db
+  community.general.pacman:
+    name: man-db
+    state: present
+  become: true
+...

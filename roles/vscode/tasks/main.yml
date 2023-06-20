@@ -1,0 +1,13 @@
+---
+- name: Install VSCode
+  kewlfft.aur.aur:
+    name: visual-studio-code-bin
+    use: makepkg
+    state: present
+
+- name: Install gnome-keyring
+  community.general.pacman:
+    name: gnome-keyring
+    state: present
+  become: true
+...

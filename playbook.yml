@@ -1,13 +1,24 @@
 ---
-- hosts: localhost
+- name: Basic playbook
+  hosts: localhost
   roles:
-    - role: alacritty
-    - role: gnupg
+    - role: aptitude
+      when: ansible_facts['os_family'] == 'Debian'
+    - role: bluetooth
     - role: browsers
       tags: ['firefox']
-    - role: dotfiles
-    - role: nvim
-      vars:
-        vim:
-          dir: "/home/{{ user.name }}/.config/nvim"
-    - role: bluetooth
+    - role: docker-arch
+      when: ansible_facts['os_family'] == 'Archlinux'
+    - role: docker-ubuntu
+      when: ansible_facts['os_family'] == 'Debian'
+    - role: fonts
+    - role: gnupg
+    - role: pass
+    - role: terminal
+    - role: vscode
+    - role: wm
+    - role: zsh
+    - role: utils
+    - role: polkit
+    - role: cockpit
+...

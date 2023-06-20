@@ -7,6 +7,3 @@ dotfiles:
     url: git@github.com:lincentpega/dotfiles.git
     destination: .local/share/chezmoi
     rcup_flags: -fx README.md
-
-base_fonts:
-    - ttf-hack

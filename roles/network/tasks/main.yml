@@ -1,0 +1,8 @@
+---
+- name: Install Network Manager OpenVPN extension
+  community.general.pacman:
+    name:
+      - networkmanager-openvpn
+    state: present
+  become: true
+...

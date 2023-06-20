@@ -1,0 +1,17 @@
+---
+- name: Install sway wm and additional packages
+  community.general.pacman:
+    name:
+      - sway
+      - swayidle
+      - swaylock
+      - waybar
+      - mako
+      - grim
+      - slurp
+      - bemenu-wayland
+      - wl-clipboard
+      - xdg-desktop-portal-wlr
+      - xorg-xwayland
+    state: present
+  become: true

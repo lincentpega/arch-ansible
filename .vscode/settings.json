@@ -1,0 +1,10 @@
+{
+    "ansible.python.interpreterPath": "/bin/python",
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks": [
+            "file:///home/imkrasnyukov/Documents/Development/arch-ansible/roles/pass/tasks/main.yml",
+            "file:///home/imkrasnyukov/Documents/Development/arch-ansible/roles/bluetooth/tasks/main.yml",
+            "file:///home/imkrasnyukov/Documents/Development/arch-ansible/roles/docker/tasks/main.yml"
+        ]
+    }
+}

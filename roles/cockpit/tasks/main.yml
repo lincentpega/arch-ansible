@@ -1,0 +1,16 @@
+---
+- name: Install cockpit
+  community.general.pacman:
+    name:
+      - cockpit-machines
+      - cockpit-podman
+    state: present
+  become: true
+
+- name: Enable cockpit socket
+  ansible.builtin.systemd:
+    name: cockpit.socket
+    state: started
+    enabled: true
+  become: true
+...
