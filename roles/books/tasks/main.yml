@@ -1,17 +1,14 @@
 ---
-- name: Install Firefox
+- name: Install calibre
   community.general.pacman:
-    name: firefox
+    name: calibre
     state: present
   become: true
-  tags:
-    - firefox
 
-- name: Install Chromium
+- name: Install evince
   community.general.pacman:
-    name: chromium
+    name: evince
     state: present
   become: true
-  tags:
-    - chromium
+
 ...

@@ -1,0 +1,9 @@
+---
+- name: Install tcl tk
+  community.general.pacman:
+    name:
+      - tcl
+      - tk
+    state: present
+  become: true
+...

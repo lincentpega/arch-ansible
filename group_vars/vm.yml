@@ -1,0 +1,6 @@
+---
+user:
+  name: user
+ansible_become_pass: user
+...
+

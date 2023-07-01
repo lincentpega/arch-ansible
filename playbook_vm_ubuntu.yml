@@ -1,0 +1,7 @@
+---
+- name: Ubuntu vm group base playbook
+  hosts: vm
+  roles:
+    - role: aptitude_ubuntu
+    - role: docker_ubuntu
+...

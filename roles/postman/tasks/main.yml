@@ -1,0 +1,8 @@
+---
+- name: Install Postman
+  kewlfft.aur.aur:
+    name: postman-bin
+    use: makepkg
+    state: present
+...
+

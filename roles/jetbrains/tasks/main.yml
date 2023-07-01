@@ -1,0 +1,6 @@
+---
+- name: Install JetBrains Toolbox
+  kewlfft.aur.aur:
+    name: jetbrains-toolbox
+    state: present
+...

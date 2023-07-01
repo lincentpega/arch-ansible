@@ -1,16 +1,12 @@
 ---
-- name: Basic playbook
+- name: Arch localhost system configuration playbook
   hosts: localhost
   roles:
-    - role: aptitude
-      when: ansible_facts['os_family'] == 'Debian'
+    - role: upgrade_pacman
     - role: bluetooth
     - role: browsers
-      tags: ['firefox']
+      tags: ['firefox', 'chromium']
     - role: docker_arch
-      when: ansible_facts['os_family'] == 'Archlinux'
-    - role: docker_ubuntu
-      when: ansible_facts['os_family'] == 'Debian'
     - role: fonts
     - role: gnupg
     - role: pass
@@ -24,4 +20,9 @@
     - role: network
     - role: kvm
     - role: telegram
+    - role: jetbrains
+    - role: books
+    - role: obs
+    - role: tkgate
+    - role: postman
 ...

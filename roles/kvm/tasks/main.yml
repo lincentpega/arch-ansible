@@ -1,12 +1,14 @@
 ---
 
-- name: Install libvirt
+- name: Install libvirt, qemu, virt-install packages
   community.general.pacman:
     name:
       - libvirt
       - dnsmasq
       - iptables-nft
       - qemu-base
+      - virt-install
+      - virt-viewer
     force: true
   become: true
 

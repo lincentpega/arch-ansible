@@ -1,0 +1,14 @@
+---
+- name: Install snap
+  kewlfft.aur.aur:
+    name: snapd
+    use: makepkg
+    state: present
+
+- name: Enable snapd daemon
+  ansible.builtin.systemd:
+    name: snapd.socket
+    state: started
+    enabled: true
+  become: true
+...

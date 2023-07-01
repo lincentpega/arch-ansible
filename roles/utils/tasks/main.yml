@@ -16,4 +16,46 @@
     name: man-db
     state: present
   become: true
+
+- name: Install mitmproxy
+  community.general.pacman:
+    name: mitmproxy
+    state: present
+  become: true
+
+- name: Install svn
+  community.general.pacman:
+    name: subversion
+    state: present
+  become: true
+
+- name: Install unzip
+  community.general.pacman:
+    name: unzip
+    state: present
+  become: true
+
+- name: Install sshpass
+  community.general.pacman:
+    name: sshpass
+    state: present
+  become: true
+
+- name: Install vifm
+  community.general.pacman:
+    name: vifm
+    state: present
+  become: true
+
+- name: Install jq
+  community.general.pacman:
+    name: jq
+    state: present
+  become: true
+
+- name: Install vlc
+  community.general.pacman:
+    name: vlc
+    state: present
+  become: true
 ...

@@ -1,0 +1,8 @@
+---
+- name: Install libvirt, qemu, virt-install packages
+  community.general.pacman:
+    name:
+      - obs-studio
+    force: true
+  become: true
+...

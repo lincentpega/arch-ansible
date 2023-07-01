@@ -1,0 +1,7 @@
+---
+- name: Update system packages
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
+  become: true
+...
